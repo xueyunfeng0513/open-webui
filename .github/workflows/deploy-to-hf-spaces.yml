@@ -62,4 +62,4 @@ jobs:
           rm demo.gif
           git add .
           git commit -m "GitHub deploy: ${{ github.sha }}"
-          git push --force https://${HF_USER}:${HF_TOKEN}@huggingface.co/spaces/${HF_USER}/${HF_REPO} main
+          git push --force https://xueyunfeng:${HF_TOKEN}@huggingface.co/spaces/xueyunfeng/openwebui main
