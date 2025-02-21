@@ -16,6 +16,8 @@ jobs:
       - id: check-key
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_REPO: ${{ secrets.HF_REPO }}
+          HF_USER: ${{ secrets.HF_USER }}
         if: "${{ env.HF_TOKEN != '' }}"
         run: echo "defined=true" >> $GITHUB_OUTPUT
 
@@ -60,4 +62,4 @@ jobs:
           rm demo.gif
           git add .
           git commit -m "GitHub deploy: ${{ github.sha }}"
-          git push --force https://open-webui:${HF_TOKEN}@huggingface.co/spaces/open-webui/open-webui main
+          git push --force https://${HF_USER}:${HF_TOKEN}@huggingface.co/spaces/${HF_USER}/${HF_REPO} main
